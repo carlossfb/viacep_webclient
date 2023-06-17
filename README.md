@@ -11,6 +11,46 @@
     docker run --name reactive-viacep_container -p 8080:8080 -d reactive-viacep:1.0.0
 ```
 
+#### /api/{cep}
+
+```json
+    {
+      "cep": "03252-000",
+      "logradouro": "Rua Barbeiro de Sevilha",
+      "complemento": "",
+      "bairro": "Vila Rosa Molla",
+      "localidade": "São Paulo",
+      "uf": "SP",
+      "ibge": "3550308",
+      "gia": "1004",
+      "ddd": "11",
+      "siafi": "7107",
+      "_links": {
+        "self": {
+          "href": "http://localhost:8080/api/03252000"
+        }
+      }
+    }
+```
+
+#### Create a build (and change name of JAR) for use in Docker container (Example POM)
+
+```bash
+   mvn clean package
+```
+
+```xml
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+		<finalName>application</finalName> *Name of JAR file*
+	</build>
+```
+
 
 ### Reference Documentation
 For further reference, please consider the following sections:
