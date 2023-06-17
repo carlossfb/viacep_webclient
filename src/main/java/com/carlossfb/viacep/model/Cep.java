@@ -1,9 +1,13 @@
 package com.carlossfb.viacep.model;
 
+import org.springframework.hateoas.RepresentationModel;
+
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
-public class Cep {
+@EqualsAndHashCode(callSuper = false)
+public class Cep extends RepresentationModel<Cep>{
     private String cep;
     private String logradouro;
     private String complemento;
