@@ -33,11 +33,12 @@
     }
 ```
 
-#### Create a build (and change name of JAR) for use in Docker container (Example POM)
+#### Create a build (and change name of JAR) for use in Docker container 
 
 ```bash
    mvn clean package
 ```
+#### (Example POM)
 
 ```xml
 	<build>
