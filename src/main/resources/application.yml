@@ -19,7 +19,7 @@ management:
 sonar:
   projectKey: teste
   organization: carlossfb
-  hostUrl: ${SONAR_HOST_URL}
+  hostUrl: https://sonarcloud.io
 
 server:
   address: 0.0.0.0
