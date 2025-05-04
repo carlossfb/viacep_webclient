@@ -59,6 +59,7 @@
 			<version>2.1.0</version>
 		</dependency>
 
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -73,6 +74,11 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+			  <groupId>org.codehaus.mojo</groupId>
+			  <artifactId>sonar-maven-plugin</artifactId>
+			  <version>3.9.0.1504</version> <!-- Versão atualizada -->
 			</plugin>
 		</plugins>
 		<finalName>application</finalName>
