@@ -20,7 +20,6 @@ sonar:
   projectKey: teste
   organization: carlossfb
   hostUrl: ${SONAR_HOST_URL}
-  token: ${SONAR_TOKEN}
 
 server:
   address: 0.0.0.0
