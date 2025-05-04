@@ -30,4 +30,5 @@ jobs:
         run: mvn clean verify sonar:sonar \
           -Dsonar.projectKey=teste \
           -Dsonar.organization=carlossfb \
+          -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
