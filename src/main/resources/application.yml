@@ -16,11 +16,5 @@ management:
     prometheus:
       enabled: true
 
-sonar:
-  projectKey: teste
-  organization: carlossfb
-  hostUrl: https://sonarcloud.io
-
 server:
   address: 0.0.0.0
-

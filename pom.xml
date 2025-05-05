@@ -16,6 +16,11 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
+		<!-- Propriedades do SonarQube substituídas por placeholders -->
+		<sonar.projectKey>${SONAR_PROJECT_KEY}</sonar.projectKey>
+		<sonar.organization>${SONAR_ORGANIZATION}</sonar.organization>
+		<sonar.host.url>${SONAR_HOST_URL}</sonar.host.url>
+		<sonar.login>${SONAR_TOKEN}</sonar.login>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -75,10 +80,31 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<!-- Plugin do SonarCloud -->
 			<plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
 				<version>3.11.0.3922</version>
+			</plugin>
+			<!-- Plugin para executar scripts -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<phase>initialize</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>python</executable>
+							<arguments>
+								<argument>${project.basedir}/src/main/resources/load_sonar_config.py</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 		<finalName>application</finalName>
